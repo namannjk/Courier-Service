@@ -1,0 +1,108 @@
+<%- include('partials/header') %>
+
+<head>
+  <style>
+    /* center the header */
+    /* h1 {
+      text-align: center;
+    } */
+
+    /* style the form elements */
+    form {
+      /* margin-top: 20px; */
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+    button[type="submit"],
+    input[type="button"] {
+      background-color: #4caf50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover,
+    input[type="button"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" style="margin-top: 10%; margin-bottom: 5%;">
+    <div class="row">
+      <div class="col-md-6" style="text-align: left;">
+        <div class="customer-care">
+          <h1 class="text-9 abox-shadow-1 fadeInLeft appear-animation" data-appear-animation="fadeInleft" data-appear-animation-delay="500">
+            Customer Care
+          </h1>
+          <br>
+          <div class="heading-bottom-border"></div>
+          <p class="mb-2">
+            We strive to provide best-in-class customer services and support to ensure a seamless shipping experience. In case of any issues with tracking or delivery, you can reach out to us on
+            <a href="raise_a_service_query.asp">Raise a Query</a> or contact us at
+            <a href="#"> +917828108600 </a> or email us at
+            <a href="mailto:customersupport@jaincourierservice.com">customersupport@jaincourierservice.com</a>
+          </p>
+          <!-- <ul style="list-style-type: none"> -->
+            <p>
+
+              1. Our customer service is available in English, Hindi, & regional languages
+              <br>
+              2. Customer service business hours are 09.30 AM IST - 06.00 PM IST, Monday - Saturday
+              <br>
+              3. Standard call charges will be applicable
+            </p>
+          <!-- </ul> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <% if (success === "submit") { %>
+          <div class="alert alert-success">
+            Query has been Submitted Successfully!!
+          </div>
+        <% } %> 
+        <% if (success === "errorinadding") { %>
+          <div class="alert alert-success">
+            Query is not Submitted or Any Error !!
+          </div>
+        <% } %>
+        <form action="/feedback" method="post" name="feedback">
+          <h3>Any Query ?</h3>
+          <hr />
+          <label for="contactPerson">Enter Name</label>
+          <input name="contactPerson" type="text" />
+          <label for="contactNo">Enter Contact Number</label>
+          <input name="contactNo" type="text" />
+          <label for="email">Enter Email-id</label>
+          <input name="email" type="email" />
+          <label for="query">Query</label>
+          <input name="query" type="text" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
+<%- include('partials/footer') %>

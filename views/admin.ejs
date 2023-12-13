@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+
+    <style>
+      /* center the header */
+      h1 {
+        text-align: center;
+      }
+
+      /* style the form elements */
+      form {
+        /* margin-top: 20px; */
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        width: 400px;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+      }
+
+      button[type="submit"],
+      input[type="button"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover,
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Admit Portal</h1>
+
+    <% if (success==="added") { %>
+    <div
+      style="
+        text-align: center;
+        margin: 1rem 38rem;
+        padding: 0.5rem;
+        background: #45a049;
+      "
+      class="alert alert-success"
+    >
+      Franchisee has been Added Successfully!!
+    </div>
+    <% } %> <% if (success=="deleted") { %>
+    <div
+      style="
+        text-align: center;
+        margin: 1rem 38rem;
+        padding: 0.5rem;
+        background: #45a049;
+      "
+      class="alert alert-success"
+    >
+      Franchisee has been Deleted Successfully!!
+    </div>
+    <% } %> <% if (success=="notFound") { %>
+    <div
+      style="
+        text-align: center;
+        margin: 1rem 38rem;
+        padding: 0.5rem;
+        background: #45a049;
+      "
+      class="alert alert-success"
+    >
+      Franchisee has not Found !!
+    </div>
+    <% } %> <% if (success=="errorinadding") { %>
+    <div
+      style="
+        text-align: center;
+        margin: 1rem 38rem;
+        padding: 0.5rem;
+        background: #45a049;
+      "
+      class="alert alert-success"
+    >
+      Franchisee has already in Database or Any Error !!
+    </div>
+    <% } %>
+
+    <!-- Add Franchisee Form -->
+    <form
+      action="addFranchisee"
+      method="post"
+      enctype="multipart/form-data"
+      name="AddFranchisee"
+    >
+      <h3 style="text-align: center">Add Franchisee</h3>
+      <hr />
+      <label for="image">Attach Image of Franchiser</label>
+      <input name="image" type="file" />
+      <br />
+      <br />
+      <label for="contactPerson">Enter Contact Person Name</label>
+      <input name="contactPerson" type="text" />
+
+      <label for="contactNo">Enter Contact Number</label>
+      <input name="contactNo" type="text" />
+
+      <label for="branchName">Enter Branch Name</label>
+      <input name="branchName" type="text" />
+
+      <label for="email">Enter Email-id</label>
+      <input name="email" type="email" />
+
+      <label for="password">Password</label>
+      <input name="password" type="text" />
+
+      <label for="state">Enter Branch State</label>
+      <input name="state" type="text" />
+
+      <label for="district">Enter Branch District</label>
+      <input name="district" type="text" />
+
+      <label for="city">Enter Branch City</label>
+      <input name="city" type="text" />
+
+      <label for="pincode">Enter Branch Pin-code</label>
+      <input name="pincode" type="text" />
+
+      <label for="address">Enter Branch Address</label>
+      <input name="address" type="text" />
+
+      <button type="submit">Add Franchisee</button>
+    </form>
+
+    <!-- Delete Franchisee Form -->
+    <form action="/deleteFranchisee" method="post" name="deleteFranchisee">
+      <h3 style="text-align: center">Delete Franchisee</h3>
+      <hr />
+      <label for="pincode">Enter Branch Pin-code</label>
+      <input name="pincode" type="text" />
+      <button type="submit">Delete Franchisee</button>
+    </form>
+
+    <!-- View Franchisee Form -->
+    <form action="/viewFranchisees" method="get" name="viewFranchisees">
+      <button type="submit">View All Franchisee</button>
+    </form>
+  </body>
+</html>

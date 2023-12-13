@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FOUND</h1>
+
+    <div class="right-section">
+        <h2 style="font-size: 48px"></h2>
+        <br />
+        <h3>Sender Pincode: <%= track.Spincode %></h3>
+        <h3>Receiver Pincode: <%= track.Rpincode %></h3>
+        <h3>Sender Address: <%= track.SAddress %></h3>
+        <h3>Receiver Address: <%= track.RAddress %></h3>
+      </div>
+      <div class="right-section">
+    </div>
+    
+<div>
+    
+    <table>
+        <tr>
+            <td>Tracking Number </td>
+            <td> <%= track.trackingID %></td>
+        </tr>
+        <tr>
+            <td>Last Updated Time </td>
+            <td> <%= track.date %></td>
+        </tr>
+        
+    </table>
+
+</div>
+
+</body>
+</html>
+
+<!-- Spincode: req.body.SPincode,
+Rpincode: req.body.RPincode,
+SName: req.body.SName,
+RName: req.body.RName,
+Smobile: req.body.SMobile,
+Rmobile: req.body.RMobile,
+SAddress: req.body.SAddress,
+RAddress: req.body.RAddress,
+Semail: req.body.SEmail,
+Remail: req.body.REmail,
+date: currentDate -->
+
+
+

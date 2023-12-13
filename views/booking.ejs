@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Consignment</title>
+</head>
+<body>
+    <style>
+        /* center the header */
+        h1 {
+          text-align: center;
+        }
+      
+        /* style the form elements */
+        form {
+          margin-top: 20px;
+          border: 1px solid #ccc;
+          padding: 10px;
+          width: 800px;
+          margin: 0 auto;
+        }
+      
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+      
+        input[type="text"] {
+          width: 100%;
+          padding: 5px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          margin-bottom: 10px;
+        }
+      
+        button[type="submit"],
+        input[type="button"] {
+          background-color: #4caf50;
+          color: white;
+          padding: 8px 12px;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+      
+        button[type="submit"]:hover,
+        input[type="button"]:hover {
+          background-color: #45a049;
+        }
+      </style>
+      
+      <h2 style="text-align: center">Book Consignment</h2>
+      <style>
+        .form-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          border: 1px solid #ccc;
+          padding: 20px;
+        }
+      
+        .form-column {
+          flex-basis: 45%;
+        }
+      
+        .form-column + .form-column {
+          margin-left: 10px;
+          padding-left: 10px;
+          border-left: 1px solid #ccc;
+        }
+      
+        .center-button {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+        }
+      </style>
+      
+      <form action="/bookConsignment?id=<%=franchisee.pincode%>" method="post">
+        <div class="form-container">
+          <div class="form-column">
+            <h2>Sender Details</h2>
+            <hr />
+            <label for="senderName">Sender Name *</label>
+            <input name="senderName" type="text" required />
+      
+            <label for="senderCity">Sender's City *</label>
+            <input name="senderCity" type="text" required />
+      
+            <label for="senderPincode">Sender's Pincode*</label>
+            <input name="senderPincode" type="text" required />
+      
+            <label for="senderAddress">Sender's Address</label>
+            <input name="senderAddress" type="text" />
+      
+            <label for="senderContactNo">Sender's Contact Number</label>
+            <input name="senderContactNo" type="text" />
+
+            <label for="senderEmail">Sender's E-Mail</label>
+            <input name="senderEmail" type="email" />
+          </div>
+      
+          <div class="form-column">
+            <h2>Receiver Details</h2>
+            <hr />
+            <label for="ReceiverName">Receiver Name *</label>
+            <input name="ReceiverName" type="text" required />
+      
+            <label for="ReceiverCity">Receiver's City *</label>
+            <input name="ReceiverCity" type="text" required />
+      
+            <label for="ReceiverPincode">Receiver's Pincode*</label>
+            <input name="ReceiverPincode" type="text" required />
+      
+            <label for="ReceiverAddress">Receiver's Address</label>
+            <input name="ReceiverAddress" type="text" />
+      
+            <label for="ReceiverContactNo">Receiver's Contact Number</label>
+            <input name="ReceiverContactNo" type="text" />
+
+            <label for="ReceiverEmail">Receiver's E-Mail</label>
+            <input name="ReceiverEmail" type="email" />
+          </div>
+        </div>
+      
+        <div class="center-button">
+            <input
+              type="text"
+              name="trackingNumber"
+              style="width: 250px; height: 20px;  border: 2px solid black; margin-right:15px ;"
+              placeholder="Enter Traking Number"
+              maxlength="10"
+            />
+          <button type="submit">Book Consignment</button>
+        </div>
+      </form>
+
+      <% if (success==="booked") { %>
+        <div
+          style="
+            text-align: center;
+            margin: 1rem 38rem;
+            padding: 0.5rem;
+            background: #45a049;
+          "
+          class="alert alert-success"
+        >
+          Consignment has been booked Successfully!!
+        </div>
+        <% } %> 
+      
+
+        <% if (success=="errorinbooking") { %>
+          <div
+            style="
+              text-align: center;
+              margin: 1rem 38rem;
+              padding: 0.5rem;
+              background: #45a049;
+            "
+            class="alert alert-success"
+          >
+            Consignment Number has already Booked or Any Error !!
+          </div>
+          <% } %>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<%- include('partials/header') %>
+
+<section
+  class="header3 cid-rRAJ0Vo8T2 mbr-fullscreen mbr-parallax-background"
+  id="header3-1"
+>
+  <div
+    class="mbr-overlay"
+    style="opacity: 0.8; background-color: rgb(255, 255, 255)"
+  ></div>
+
+  <div class="container">
+
+    <% if (success==="invalid") { %>
+      <div
+        style="
+          text-align: center;
+          padding: 0.5rem;
+          margin-left: 1rem;
+          width: 20rem;
+          background: #45a049;
+        "
+        class="alert alert-success"
+      >
+        Tracking Number Not Found!!
+      </div>
+      <% } %> 
+
+
+    <h2 style="margin-left: 1rem">Track Your Order</h2>
+    <div class="tracking-container" style="margin-left: 0">
+      <div class="track-form-wrapper">
+      
+        <form id="home-track-form" method="post" action="/TrackingOnly">
+          <div class="input-field-wrapper" id="mobileBx">
+            <input
+              type="text"
+              maxlength="10"
+              pattern="\d{10}"
+              style="height: 2.25rem; border: 2px solid black"
+              class="track-input-field tracktext btn"
+              name="trackingNumber"
+              placeholder="Enter Tracking Number"
+            />
+            <button
+              type="submit"
+              class="btn btn-secondary"
+              id="radiusid"
+              style="height: 1rem"
+            >
+              Track
+            </button>
+          </div>
+          <div class="hintfix" style="display: none"></div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

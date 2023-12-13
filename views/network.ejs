@@ -1,0 +1,83 @@
+<%- include('partials/header') %>
+
+<style>
+  #page-wrapper,
+  #htmlView {
+    float: left;
+    width: 100%;
+    margin: 30px 0 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  #submit {
+    background: #00bcd4;
+    border: 0;
+    color: #fff;
+  }
+</style>
+
+<section
+  class="header3 cid-rRAJ0Vo8T2 mbr-fullscreen mbr-parallax-background"
+  id="header3-1"
+>
+  <div
+    class="mbr-overlay"
+    style="opacity: 0.8; background-color: rgb(255, 255, 255)"
+  ></div>
+
+  <div id="page-wrapper">
+    <div class="container">
+      <div class="row">
+        <div id="page-wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-4" id="form-sec">
+
+                <% if (success==="invalid") { %>
+                  <div style="text-align: center;margin: 1rem;padding: 0.5rem;background: #fe4000;" class="alert alert-success">
+                    Sorry! Our Service is not Available at your pincode.
+                  </div>
+  
+                  <% } %>
+
+                <form method="post" action="network">
+                  <div class="form-group" style="margin-left: 15px">
+                    <label for="text" class="">Enter Indian Pincode</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="text"
+                      name="pinCode"
+                      placeholder="Enter Pincode"
+                      maxlength="6"
+                      onkeypress="return event.charCode >= 48 &amp; event.charCode <= 57"
+                    />
+                  </div>
+                  <button id="submit" type="submit" class="btn btn-lg btn-block">
+                    Submit
+                  </button>
+                </form>
+                
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+        <div id="total-msg"></div>
+        <div id="htmlView">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12" style="padding: 0">
+                <div id="mkslider"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+</section>
+
+<%- include('partials/footer') %>

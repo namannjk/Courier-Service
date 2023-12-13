@@ -1,0 +1,90 @@
+<!-- mybooking.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+/* Add this CSS in the head section of your HTML file or include it in a separate CSS file */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Optional: Add hover effect to rows */
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>My Bookings</h2>
+
+  <% if (bookings.length > 0) { %>
+    <table>
+      <tr>
+        <th>Traking Number</th>
+        <th>Receiver's Name</th>
+        <th>Receiver's City</th>
+        <th>Receiver's Pincode</th>
+        <th>Receiver's Address</th>
+        <th>Receiver's Email</th>
+        <th>Status</th>
+      </tr>
+      <% bookings.forEach(function(shipment) { %>
+        <tr>
+          <td><%= shipment.trackingNumber %></td>
+          <td><%= shipment.ReceiverName %></td>
+          <td><%= shipment.ReceiverCity %></td>
+          <td><%= shipment.ReceiverPincode %></td>
+          <td><%= shipment.ReceiverAddress %></td>
+          <td><%= shipment.ReceiverEmail %></td>
+          <td><%= shipment.deliveryStatus %></td>
+        </tr>
+      <% }); %>
+    </table>
+  <% } else { %>
+    <p>No bookings found for the provided pin code.</p>
+  <% } %>
+
+</body>
+</html>

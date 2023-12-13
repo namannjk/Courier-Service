@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+
+<section
+  class="header3 cid-rRAJ0Vo8T2 mbr-fullscreen mbr-parallax-background"
+  id="header3-1"
+>
+  <div
+    class="mbr-overlay"
+    style="opacity: 0.8; background-color: rgb(255, 255, 255)"
+  ></div>
+
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+             
+                <form method="post" action="/shipmentHistory?pincode=<%=pincode%>">
+                    <div class="form-outline mb-3">
+                      <label class="form-label" for="trackingNumber">Enter Tracking Number</label>
+                      <input
+                        type="text"
+                        name="trackingNumber"
+                        id="trackingNumber"
+                        class="form-control"
+                        placeholder="Tracking Number"
+                        maxlength="10"
+                      />
+                    </div>
+                  
+                    <div class="text-center pt-1 pb-1">
+                      <button
+                        class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                        type="submit"
+                        style="margin-left: 0px"
+                      >
+                        Fetch Details
+                      </button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

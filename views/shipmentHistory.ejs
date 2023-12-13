@@ -1,0 +1,135 @@
+<%- include('partials/header') %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bookings</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .table-container {
+        width: 48%; /* Adjust the width as needed */
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      /* Optional: Add hover effect to rows */
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body style="margin-top: 10%;">
+    <h1 style="margin: 0 10% 0 11%">Shipment Details</h1>
+    <br />
+    <div class="container" style="margin: 0 10% 0 10%">
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Tracking Number</th>
+            <td><%= shipment.trackingNumber %></td>
+          </tr>
+          <tr>
+            <th>Receiver's Name</th>
+            <td><%= shipment.ReceiverName %></td>
+          </tr>
+          <tr>
+            <th>Receiver's City</th>
+            <td><%= shipment.ReceiverCity %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Receiver's Pincode</th>
+            <td><%= shipment.ReceiverPincode %></td>
+          </tr>
+          <tr>
+            <th>Receiver's Address</th>
+            <td><%= shipment.ReceiverAddress %></td>
+          </tr>
+          <tr>
+            <th>Receiver's Email</th>
+            <td><%= shipment.ReceiverEmail %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <h2 style="margin: 0 10% 0 11%">Traking History</h2>
+    <br />
+    <div class="container" style="margin: 0 10% 0 10%">
+      <table>
+        <% if (shipment.history.length > 0) { %>
+        <tr>
+          <th>Date</th>
+          <th>Update By</th>
+          <th>Status</th>
+        </tr>
+        <% shipment.history.forEach(entry => { %>
+        <tr>
+          <td>
+            <%= new Date(entry.date).toLocaleDateString('en-US', { year:
+            'numeric', month: 'long', day: 'numeric' }) %>
+          </td>
+          <td><%= entry.updateBy %></td>
+          <td><%= entry.status %></td>
+        </tr>
+        <% }); %> <% } else { %>
+        <tr>
+          <td colspan="3">No history available</td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+
+    <br /><br />
+    <form action="/updateOnly" method="post" style="margin: 0 10% 10% 11%">
+      <!-- Input fields for tracking number and pincode -->
+      <input type="hidden" name="trackingNumber" value="<%= shipment.trackingNumber %>" />
+      <input type="hidden" name="pincode" value="<%= pincode %>" />
+    
+      <h3>Enter Updated Status</h3>
+      <input type="text" id="updateStatus" name="updateStatus" required />
+    
+      <button type="submit">Update</button>
+    </form>
+    
+
+  </body>
+</html>
+
+
+
+<%- include('partials/footer') %>

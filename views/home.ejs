@@ -1,0 +1,720 @@
+<%- include('partials/header') %>
+
+<div class="modal fade login" id="loginModal">
+    <div class="modal-dialog login animated">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="loginModal">Login with</h4>
+        </div>
+        <div class="modal-body">
+          <div class="box">
+            <div class="content">
+              <div class="social">
+                <a class="circle github" href="#">
+                  <i class="fa fa-github fa-fw"></i>
+                </a>
+                <a id="google_login" class="circle google" href="#">
+                  <i class="fa fa-google-plus fa-fw"></i>
+                </a>
+                <a id="facebook_login" class="circle facebook" href="#">
+                  <i class="fa fa-facebook fa-fw"></i>
+                </a>
+              </div>
+              <div class="division">
+                <div class="line l"></div>
+                <span>or</span>
+                <div class="line r"></div>
+              </div>
+              <div class="error"></div>
+              <div class="form loginBox">
+                <form method="" action="" accept-charset="UTF-8">
+                  <input
+                    id="email"
+                    class="form-control"
+                    type="text"
+                    placeholder="Email"
+                    name="email"
+                  />
+                  <input
+                    id="password"
+                    class="form-control"
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                  />
+                  <input
+                    class="btn btn-default btn-login"
+                    type="button"
+                    value="Login"
+                    onclick="loginAjax()"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="content registerBox" style="display: none">
+              <div class="form">
+                <form
+                  method=""
+                  html="{:multipart=>true}"
+                  data-remote="true"
+                  action=""
+                  accept-charset="UTF-8"
+                >
+                  <input
+                    id="email"
+                    class="form-control"
+                    type="text"
+                    placeholder="Email"
+                    name="email"
+                  />
+                  <input
+                    id="password"
+                    class="form-control"
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                  />
+                  <input
+                    id="password_confirmation"
+                    class="form-control"
+                    type="password"
+                    placeholder="Repeat Password"
+                    name="password_confirmation"
+                  />
+                  <input
+                    class="btn btn-default btn-register"
+                    type="button"
+                    value="Create account"
+                    name="commit"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="forgot login-footer">
+            <span
+              >Looking to
+              <a href="javascript: showRegisterForm();">create an account</a>
+              ?</span
+            >
+          </div>
+          <div class="forgot register-footer" style="display: none">
+            <span>Already have an account?</span>
+            <a href="javascript: showLoginForm();">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#loginModal").click(function () {
+        $("#myModal").modal();
+      });
+    });
+  </script>
+  <section class="engine">
+    <a href="https://mobiri.se/d">free site maker</a>
+  </section>
+  <section
+    class="header3 cid-rRAJ0Vo8T2 mbr-fullscreen mbr-parallax-background"
+    id="header3-1"
+  >
+    <div
+      class="mbr-overlay"
+      style="opacity: 0.8; background-color: rgb(255, 255, 255)"
+    ></div>
+
+    <div class="container">
+      <div class="media-container-row">
+        <div class="mbr-figure" style="width: 145%">
+          <img
+            src="assets/images/ezgif.com-gif-maker-2.gif"
+            alt="Mobirise"
+            title=""
+          />
+        </div>
+
+        <div class="media-content">
+          <h1
+            class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1"
+          >
+            <strong> Jain Courier Services</strong>
+          </h1>
+
+          <div class="mbr-section-text mbr-white pb-3">
+            <p class="mbr-text mbr-fonts-style display-5">
+              We are industry leaders in the realm of delivery and pickup, 
+              offering real-time tracking and cost-effective solutions.
+            </p>
+          </div>
+          <div class="mbr-section-btn">
+            <a class="btn btn-md btn-primary display-7" href="#"
+              >LEARN MORE</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="clients cid-rRBnWDQezH" id="clients-3">
+    <div class="container mb-5">
+      <div class="media-container-row">
+        <div class="col-12 align-center">
+          <h3
+            class="mbr-section-subtitle mbr-light mbr-fonts-style display-5"
+          >
+            We have had the privilege of collaborating with over 5000
+            customers in India, establishing ourselves as a trusted partner in
+            the industry. Our clientele comprises a diverse range of
+            customers, including some of the most esteemed companies in India.
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="carousel slide" data-ride="carousel" role="listbox">
+        <div class="carousel-inner" data-visible="5">
+          <div class="carousel-item">
+            <div class="media-container-row">
+              <div class="col-md-12">
+                <div class="wrap-img">
+                  <img
+                    src="assets/images/1.png"
+                    class="img-responsive clients-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="media-container-row">
+              <div class="col-md-12">
+                <div class="wrap-img">
+                  <img
+                    src="assets/images/2.png"
+                    class="img-responsive clients-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="media-container-row">
+              <div class="col-md-12">
+                <div class="wrap-img">
+                  <img
+                    src="assets/images/3.png"
+                    class="img-responsive clients-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="media-container-row">
+              <div class="col-md-12">
+                <div class="wrap-img">
+                  <img
+                    src="assets/images/4.png"
+                    class="img-responsive clients-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="media-container-row">
+              <div class="col-md-12">
+                <div class="wrap-img">
+                  <img
+                    src="assets/images/5.png"
+                    class="img-responsive clients-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <a
+            data-app-prevent-settings=""
+            class="carousel-control carousel-control-prev"
+            role="button"
+            data-slide="prev"
+          >
+            <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            data-app-prevent-settings=""
+            class="carousel-control carousel-control-next"
+            role="button"
+            data-slide="next"
+          >
+            <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="header3 cid-rRChBcYKoP mbr-parallax-background"
+    id="header3-4"
+  >
+    <div class="container">
+      <div class="media-container-row">
+        <div class="mbr-figure" style="width: 145%">
+          <img
+            src="assets/images/7c50b42ddce913194fdd51bdddca190c.gif"
+            alt="Mobirise"
+            title=""
+          />
+        </div>
+
+        <div class="media-content">
+          <h1
+            class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1"
+          >
+            <strong> Who we are!</strong>
+          </h1>
+
+          <div class="mbr-section-text mbr-white pb-3">
+            <p class="mbr-text mbr-fonts-style display-7">
+              We are delighted to introduce ourselves as a dedicated team of
+              individuals who are passionate about our company and have a
+              winning attitude. Our company, Jain Courier Services, has been
+              serving the community since 1st June 1986, and we have been
+              striving to become the top courier company in the country. Our
+              vast and unparalleled domestic network is connected by some of
+              the most advanced technology available.
+              <br /><br />
+              We are dedicated to meeting the expectations of our valued
+              customers by providing timely and reliable service.
+              <br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features9 cid-rRCp5xm6Yp" id="features9-6">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="card p-3 col-12 col-md-6 col-lg-4">
+          <div class="media-container-row">
+            <div class="card-img pr-2">
+              <span class="mbri-features mbr-iconfont"></span>
+            </div>
+            <div class="card-box">
+              <h4 class="card-title py-3 mbr-fonts-style display-7">
+                Customer Satisfaction
+              </h4>
+              <p class="mbr-text mbr-fonts-style display-7">
+                We aim to satisfy our customers with prompt and reliable
+                service.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-3 col-12 col-md-6 col-lg-4">
+          <div class="media-container-row">
+            <div class="card-img pr-2">
+              <span class="mbri-star mbr-iconfont"></span>
+            </div>
+            <div class="card-box">
+              <h4 class="card-title py-3 mbr-fonts-style display-7">
+                Timely Delivery
+              </h4>
+              <p class="mbr-text mbr-fonts-style display-7">
+                Our goal is to provide dependable and timely service that
+                meets our customers' expectations and ensures their
+                satisfaction.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-3 col-12 col-md-6 col-lg-4">
+          <div class="media-container-row">
+            <div class="card-img pr-2">
+              <span class="mbri-desktop mbr-iconfont"></span>
+            </div>
+            <div class="card-box">
+              <h4 class="card-title py-3 mbr-fonts-style display-7">
+                Door-To-Door&nbsp;
+              </h4>
+              <p class="mbr-text mbr-fonts-style display-7">
+                We provide secure and efficient point-to-point express
+                distribution services, including door-to-door pickup &amp;
+                delivery.
+                <br />
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="features15 cid-rRCq9ynrYy mbr-parallax-background"
+    id="features15-7"
+  >
+    <div class="container">
+      <div class="media-container-row container pt-5 mt-2">
+        <div class="col-12 col-md-6 mb-4 col-lg-4">
+          <div class="card flip-card p-5 align-center">
+            <div class="card-front card_cont">
+              <img src="assets/images/travel.gif" alt="Mobirise" title="" />
+            </div>
+            <div class="card_back card_cont">
+              <h4 class="card-title display-5 py-2 mbr-fonts-style">
+                1600
+                <div>Branches Accross India</div>
+              </h4>
+              <p class="mbr-text mbr-fonts-style display-7"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4 col-lg-4">
+          <div class="card flip-card p-5 align-center">
+            <div class="card-front card_cont">
+              <img src="assets/images/sa1.gif" alt="Mobirise" title="" />
+            </div>
+            <div class="card_back card_cont">
+              <h4 class="card-title py-2 mbr-fonts-style display-5">
+                Serviceable Pincodes
+              </h4>
+              <p class="mbr-text mbr-fonts-style display-7">
+                Serviceable Pincodes
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4 col-lg-4">
+          <div class="card flip-card p-5 align-center">
+            <div class="card-front card_cont">
+              <img src="assets/images/source1.gif" alt="Mobirise" title="" />
+            </div>
+            <div class="card_back card_cont">
+              <h4 class="card-title py-2 mbr-fonts-style display-5">
+                Unlimited Sites
+              </h4>
+              <p class="mbr-text mbr-fonts-style display-7">
+                Mobirise gives you the freedom to develop as many websites as
+                you like given the fact that it is a desktop app.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="progress-bars3 cid-rRD7fxokGx" id="progress-bars3-8">
+    <div class="container">
+      <h2
+        class="mbr-section-title pb-3 align-center mbr-fonts-style display-1"
+      >
+        OUR PROCESS
+      </h2>
+
+      <div class="media-container-row pt-5 mt-2">
+        <div class="card p-3 align-center">
+          <div class="wrap">
+            <div
+              class="pie_progress progress1"
+              role="progressbar"
+              data-goal="20"
+              aria-valuenow="20"
+            >
+              <p class="pie_progress__number mbr-fonts-style display-5">
+                20%
+              </p>
+              <div class="undefined">
+                <svg
+                  version="1.1"
+                  preserveAspectRatio="xMinYMin meet"
+                  viewBox="0 0 150 150"
+                >
+                  <ellipse
+                    rx="71"
+                    ry="71"
+                    cx="75"
+                    cy="75"
+                    stroke="#f2f2f2"
+                    fill="none"
+                    stroke-width="8"
+                  ></ellipse>
+                  <path
+                    fill="none"
+                    stroke-width="8"
+                    stroke="url(#progress-bars3-8-svg-gradient)"
+                    d="M75,4 A71,71 0 0 1 142.52501265695588,53.059793399378734"
+                    style="
+                      stroke-dasharray: 89.2246, 89.2246;
+                      stroke-dashoffset: 0;
+                    "
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mbr-crt-title pt-3">
+            <h4 class="card-title py-2 mbr-fonts-style display-5">Pickup</h4>
+          </div>
+        </div>
+
+        <div class="card p-3 align-center">
+          <div class="wrap">
+            <div
+              class="pie_progress progress2"
+              role="progressbar"
+              data-goal="40"
+              aria-valuenow="40"
+            >
+              <p class="pie_progress__number mbr-fonts-style display-5">
+                40%
+              </p>
+              <div class="undefined">
+                <svg
+                  version="1.1"
+                  preserveAspectRatio="xMinYMin meet"
+                  viewBox="0 0 150 150"
+                >
+                  <ellipse
+                    rx="71"
+                    ry="71"
+                    cx="75"
+                    cy="75"
+                    stroke="#f2f2f2"
+                    fill="none"
+                    stroke-width="8"
+                  ></ellipse>
+                  <path
+                    fill="none"
+                    stroke-width="8"
+                    stroke="url(#progress-bars3-8-svg-gradient)"
+                    d="M75,4 A71,71 0 0 1 116.73275291276559,132.44020660062125"
+                    style="
+                      stroke-dasharray: 178.449, 178.449;
+                      stroke-dashoffset: 0;
+                    "
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mbr-crt-title pt-3">
+            <h4 class="card-title py-2 mbr-fonts-style display-5">
+              Dispatch
+            </h4>
+          </div>
+        </div>
+
+        <div class="card p-3 align-center">
+          <div class="wrap">
+            <div
+              class="pie_progress progress3"
+              role="progressbar"
+              data-goal="60"
+              aria-valuenow="60"
+            >
+              <p class="pie_progress__number mbr-fonts-style display-5">
+                60%
+              </p>
+              <div class="undefined">
+                <svg
+                  version="1.1"
+                  preserveAspectRatio="xMinYMin meet"
+                  viewBox="0 0 150 150"
+                >
+                  <ellipse
+                    rx="71"
+                    ry="71"
+                    cx="75"
+                    cy="75"
+                    stroke="#f2f2f2"
+                    fill="none"
+                    stroke-width="8"
+                  ></ellipse>
+                  <path
+                    fill="none"
+                    stroke-width="8"
+                    stroke="url(#progress-bars3-8-svg-gradient)"
+                    d="M75,4 A71,71 0 1 1 33.26724708723444,132.4402066006213"
+                    style="
+                      stroke-dasharray: 267.674, 267.674;
+                      stroke-dashoffset: 0;
+                    "
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mbr-crt-title pt-3">
+            <h4 class="card-title py-2 mbr-fonts-style display-5">
+              Destination
+            </h4>
+          </div>
+        </div>
+
+        <div class="card p-3 align-center">
+          <div class="wrap">
+            <div
+              class="pie_progress progress4"
+              role="progressbar"
+              data-goal="80"
+              aria-valuenow="80"
+            >
+              <p class="pie_progress__number mbr-fonts-style display-5">
+                80%
+              </p>
+              <div class="undefined">
+                <svg
+                  version="1.1"
+                  preserveAspectRatio="xMinYMin meet"
+                  viewBox="0 0 150 150"
+                >
+                  <ellipse
+                    rx="71"
+                    ry="71"
+                    cx="75"
+                    cy="75"
+                    stroke="#f2f2f2"
+                    fill="none"
+                    stroke-width="8"
+                  ></ellipse>
+                  <path
+                    fill="none"
+                    stroke-width="8"
+                    stroke="url(#progress-bars3-8-svg-gradient)"
+                    d="M75,4 A71,71 0 1 1 7.474987343044091,53.05979339937875"
+                    style="
+                      stroke-dasharray: 356.898, 356.898;
+                      stroke-dashoffset: 0;
+                    "
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mbr-crt-title pt-3">
+            <h4 class="card-title py-2 mbr-fonts-style display-5">
+              Last Mile
+            </h4>
+          </div>
+        </div>
+
+        <div class="card p-3 align-center">
+          <div class="wrap">
+            <div
+              class="pie_progress progress5"
+              role="progressbar"
+              data-goal="100"
+              aria-valuenow="100"
+            >
+              <p class="pie_progress__number mbr-fonts-style display-5">
+                100%
+              </p>
+              <div class="undefined">
+                <svg
+                  version="1.1"
+                  preserveAspectRatio="xMinYMin meet"
+                  viewBox="0 0 150 150"
+                >
+                  <ellipse
+                    rx="71"
+                    ry="71"
+                    cx="75"
+                    cy="75"
+                    stroke="#f2f2f2"
+                    fill="none"
+                    stroke-width="8"
+                  ></ellipse>
+                  <path
+                    fill="none"
+                    stroke-width="8"
+                    stroke="url(#progress-bars3-8-svg-gradient)"
+                    d="M75,4 A71,71 0 1 1 74.99955389384317,4.000000001401489"
+                    style="
+                      stroke-dasharray: 446.168, 446.168;
+                      stroke-dashoffset: 0;
+                    "
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mbr-crt-title pt-3">
+            <h4 class="card-title py-2 mbr-fonts-style display-5">
+              Delivery
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cid-rRD9DnKlWK" id="social-buttons2-a">
+    <div class="container">
+      <div class="media-container-row">
+        <div class="col-md-8 align-center">
+          <h2 class="pb-3 mbr-fonts-style display-1">FOLLOW US!</h2>
+          <div class="social-list pl-0 mb-0">
+            <a href="#" target="_blank">
+              <span
+                class="px-2 socicon-twitter socicon mbr-iconfont mbr-iconfont-social"
+              ></span>
+            </a>
+            <a href="#" target="_blank">
+              <span
+                class="px-2 socicon-facebook socicon mbr-iconfont mbr-iconfont-social"
+              ></span>
+            </a>
+            <a href="#" target="_blank">
+              <span
+                class="px-2 socicon-instagram socicon mbr-iconfont mbr-iconfont-social"
+              ></span>
+            </a>
+            <a href="#" target="_blank">
+              <span
+                class="px-2 socicon-youtube socicon mbr-iconfont mbr-iconfont-social"
+              ></span>
+            </a>
+            <a href="#" target="_blank">
+              <span
+                class="px-2 socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"
+              ></span>
+            </a>
+            <a href="#" target="_blank"> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<%- include('partials/footer') %>
